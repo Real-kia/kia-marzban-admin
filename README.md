@@ -47,7 +47,7 @@ Follow these steps to set up Marzban Admin successfully:
 
 ## Tutorial Video
 
-A tutorial video is coming soon!
+https://youtu.be/811lX8tCgqo
 
 ## Donation
 

@@ -28,7 +28,7 @@ Follow these steps to set up Marzban Admin successfully:
 1. **Bulk User Creation:**
    Efficiently create multiple users in bulk, saving you time and effort.
 
-2. **Dynamic User Expiration**
+2. **Dynamic User Expiration:**
    Set the expiration time to start after the first connection
 
 3. **Template Management:**

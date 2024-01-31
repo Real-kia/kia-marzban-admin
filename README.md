@@ -47,7 +47,7 @@ Follow these steps to set up Marzban Admin successfully:
 
 ## Tutorial Video
 
-<div align="right">
+<div align="left">
   <a href="https://youtu.be/811lX8tCgqo">
     <img src="https://img.youtube.com/vi/811lX8tCgqo/0.jpg" alt="Video Title" width="300">
   </a>

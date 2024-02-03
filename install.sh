@@ -27,9 +27,11 @@ show_menu() {
     echo
     echo "Please select an option:"
     echo "1) Install"
-    echo "2) Uninstall"
-    echo "3) Status"
-    echo "4) Exit"
+    echo "2) Update"
+    echo "3) Uninstall"
+    echo "4) Status"
+    echo "5) Restart"
+    echo "0) Exit"
 }
    
 
@@ -39,14 +41,44 @@ read_choice() {
     read -p "Enter choice [1 - 4]: " choice
     case $choice in
         1) install_function ;;
-        2) uninstall_function ;;
-        3) status_function ;;
-        4) exit 0 ;;
+        2) update_function ;;
+        3) uninstall_function ;;
+        4) status_function ;;
+        5) restart_function ;;
+        0) exit 0 ;;
         *) echo -e "Error: Invalid option..." && sleep 2
     esac
 }
 
-# Define your functions for each option here
+
+update_function() {
+  if [ -d "kia-marzban-admin" ]; then
+    cp kia-marzban-admin/config.json .
+    
+    rm -rf kia-marzban-admin
+    
+    git clone https://github.com/Real-kia/kia-marzban-admin
+    
+    mv config.json kia-marzban-admin/
+    
+    sudo systemctl restart kiamarzbanbot.service
+    
+    echo "Update completed successfully."
+  else
+    echo "Error: Could not find the 'kia-marzban-admin' folder."
+  fi
+}
+
+
+restart_function() {
+    echo "restarting"
+    sleep 3
+    sudo systemctl restart kiamarzbanbot.service
+    echo "restart completed successfully."
+    sleep 3
+}
+
+
 install_function() {
     echo "Updating the server..."
     sudo apt-get update 

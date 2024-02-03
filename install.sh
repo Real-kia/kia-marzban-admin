@@ -64,15 +64,17 @@ update_function() {
     sudo systemctl restart kiamarzbanbot.service
     
     echo "Update completed successfully."
+    sleep 3
   else
     echo "Error: Could not find the 'kia-marzban-admin' folder."
+    sleep 3
   fi
 }
 
 
 restart_function() {
     echo "restarting"
-    sleep 3
+    
     sudo systemctl restart kiamarzbanbot.service
     echo "restart completed successfully."
     sleep 3

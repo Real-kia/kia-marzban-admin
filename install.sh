@@ -38,7 +38,7 @@ show_menu() {
 # Function to read the user's choice
 read_choice() {
     local choice
-    read -p "Enter choice [1 - 4]: " choice
+    read -p "Enter choice [1 - 5]: " choice
     case $choice in
         1) install_function ;;
         2) update_function ;;

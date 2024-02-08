@@ -16,3 +16,10 @@ def cancel_setup():
         chat_id = callback_query.message.chat.id
         await bot.edit_message_text(chat_id=chat_id, message_id=message_id, 
         text='لغو', reply_markup=startkeyboard)
+    @dp.callback_query_handler(text=["cancelask"])
+    async def cancel_ask(callback_query: types.CallbackQuery, state: FSMContext):
+        await state.finish()
+        message_id = callback_query.message.message_id
+        chat_id = callback_query.message.chat.id
+        await bot.edit_message_text(chat_id=chat_id, message_id=message_id, 
+        text='لغو', reply_markup=startkeyboard)

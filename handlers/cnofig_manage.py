@@ -105,10 +105,14 @@ def config_create_template_setup():
         inbounds = template['inbounds']
         sub_links = bulk_config_create(name = name, hajm=hajm, days=days, tedad=tedad, inbounds=inbounds, token=token)
         for sub_link in sub_links:
-            if dev_version == True:
+            if sub_link[0] == "h" or sub_link[0] == "H":
                 await bot.send_message(chat_id=chat_id, text=sub_link)
             else:
                 await message.reply(f"{panel_address[:-1]}{sub_link}")
+            # if dev_version == True:
+            #     await bot.send_message(chat_id=chat_id, text=sub_link)
+            # else:
+            #     await message.reply(f"{panel_address[:-1]}{sub_link}")
 
         await bot.send_message(chat_id=chat_id, text='پایان', reply_markup=startkeyboard)
 
@@ -207,8 +211,8 @@ def config_create_manual_setup():
 
 
         for sub_link in sub_links:
-            if dev_version == True:
-                await message.reply(f"{sub_link}")
+            if sub_link[0] == "h" or sub_link[0] == "H":
+                await bot.send_message(chat_id=chat_id, text=sub_link)
             else:
                 await message.reply(f"{panel_address[:-1]}{sub_link}")
 
